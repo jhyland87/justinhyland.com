@@ -82,10 +82,10 @@ metalsmith
     .destination( './public' )
     .clean( true )
     .use(include())
-    .use( static({
+    /*.use( static({
         src: "models/skillsets.json",
         dest: "json/skillsets.json",
-    }))
+    }))*/
     .use( date() )
     .use( gravatar({
         justinhyland: "j@linux.com"
@@ -136,7 +136,7 @@ metalsmith
         }
     }))
     */
-    /*
+    /**
     Access Key ID: AKIAIIUGXRENWW4TQGGQ
     Secret Access Key: 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
 
@@ -146,12 +146,10 @@ metalsmith
     User: arn:aws:iam::871731382815:user/web
     Bucket: justinhyland.com.s3-website-us-west-1.amazonaws.com
     */
-    /*
     .use(s3({
         action: 'write',
         bucket: 'justinhyland.com'
     }))
-    */
     .build(function(err, files) {
         if (err) throw err
 
