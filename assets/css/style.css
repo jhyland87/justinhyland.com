@@ -562,11 +562,11 @@ h2.sub-heading {
 
 /* White Navigation, From Top */
 .first-nav.white-nav {
-    background-color: rgba(255,255,255, 1);
+    background-color: rgba(255,255,255, 0.1);
     box-shadow: 0px 1px 4px rgba(0,0,0, 0.1);
 }
 
-.first-nav.white-nav .nav-menu,.trans-nav.white-nav .nav-menu,.trans-nav .nav-menu ul li a {
+.first-nav.white-nav .nav-menu,.trans-nav.white-nav .nav-menu,.trans-nav .nav-menu ul li a,.color-nav .nav-menu ul li a {
     color: #fff;
 }
 
@@ -579,7 +579,7 @@ h2.sub-heading {
 }
 
 .second-nav.white-nav,
-	.white-nav .nav-menu ul.dropdown-menu {
+    .white-nav .nav-menu ul.dropdown-menu {
     background-color: rgba(255,255,255, 1);
     box-shadow: 0px 1px 5px rgba(0,0,0, 0.1);
 }
@@ -589,13 +589,12 @@ h2.sub-heading {
 }
 
 .second-nav.white-nav .nav-inner .nav-menu ul li.active a,
-	.white-nav .nav-menu ul.dropdown-menu li a:hover,
-	.white-nav .nav-menu ul.dropdown-menu li.active a {
+    .white-nav .nav-menu ul.dropdown-menu li a:hover,
+    .white-nav .nav-menu ul.dropdown-menu li.active a {
     color: #ffffff;
 }
 
 /* White Navigation, For Sticky */
-
 #navigation-sticky.white-nav {
     background: rgba(255,255,255,1);
 }
@@ -606,7 +605,7 @@ h2.sub-heading {
 }
 
 #navigation-sticky.color-nav {
-    background: rgba(255,255,255,1);
+    background: rgba(0,0,0,1);
 }
 
 
@@ -758,14 +757,14 @@ h2.sub-heading {
 
 /*======================== 5. HOME SECTION ========================*/
 #home {
-	position: relative;
-	width: 100%;
-	height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 .single-image{
   position: absolute;
-	width: 100%;
-	height: 100%;  
+    width: 100%;
+    height: 100%;  
   top:0;
   left:0;
 }
@@ -794,7 +793,7 @@ h2.sub-heading {
 }
 
 .innerpage-header {
-    background-image: url(	"../img/page-header.jpg");
+    background-image: url(  "../img/page-header.jpg");
     background-position: 50% 50% !important;
     background-size: cover !important;
     padding: 50px 0px;
@@ -808,23 +807,23 @@ h2.sub-heading {
     margin-bottom: 30px;
 }
 .slide-content {
-	height: 100%;
-	display: table;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 11;
-	margin: 0px auto;
+    height: 100%;
+    display: table;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    margin: 0px auto;
   text-align: center;
 }
 .slide-content .text-center {
-	vertical-align: middle;
-	display: table-cell;
-	min-width: 260px;
+    vertical-align: middle;
+    display: table-cell;
+    min-width: 260px;
 }
 
 .bg-overlay {
-    background: url(	"../img/overlay.png");
+    background: url(    "../img/overlay.png");
     position: absolute;
     width: 100%;
     height: 100%;
@@ -844,87 +843,87 @@ h2.sub-heading {
 }
 /*Scroll Icon*/
 div.scrollIcon {
-	position: absolute;
-	bottom: 15px;
-	left: 50%;
-	z-index: 100;
-	margin-left: -24.5px
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    z-index: 100;
+    margin-left: -24.5px
 }
 div.scrollIcon{
-	-webkit-animation: fadein 2s ease-in alternate infinite;
-	-moz-animation: fadein 2s ease-in alternate infinite;
+    -webkit-animation: fadein 2s ease-in alternate infinite;
+    -moz-animation: fadein 2s ease-in alternate infinite;
   -o-animation: fadein 2s ease-in alternate infinite;
   -ms-animation: fadein 2s ease-in alternate infinite;
-	animation: fadein 2s ease-in alternate infinite
+    animation: fadein 2s ease-in alternate infinite
 }
 div.scrollIcon span.scroll-down {
-	color: #FFF;
-	display: block;
-	font-size: 42px;
-	width: 16px;
-	height: 30px;
-	border: 3px solid #FFF;
-	position: relative;
-	margin: 0 auto 5px;
-	-webkit-border-top-left-radius: 5px;
-	-moz-border-top-left-radius: 5px;
+    color: #FFF;
+    display: block;
+    font-size: 42px;
+    width: 16px;
+    height: 30px;
+    border: 3px solid #FFF;
+    position: relative;
+    margin: 0 auto 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-bottom-left-radius: 10px;
   border-bottom-left-radius: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 div.scrollIcon span.scroll-down:before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 8px;
-	width: 2px;
-	height: 5px;
-	background: #FFF;
-	left: 50%;
-	margin-left: -1px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 2px;
+    height: 5px;
+    background: #FFF;
+    left: 50%;
+    margin-left: -1px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px
 }
 div.scrollIcon .scroll-text {
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 12px;
-	text-align: center;
-	float: left;
-	color: #FFF;
-	letter-spacing: 1px
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    float: left;
+    color: #FFF;
+    letter-spacing: 1px
 }
 
 @-webkit-keyframes fadein {
 0% {
-	opacity: .1
+    opacity: .1
 }
 100%, 90% {
-	opacity: 1
+    opacity: 1
 }
 }
 @-moz-keyframes fadein {
 0% {
-	opacity: .1
+    opacity: .1
 }
 100%, 90% {
-	opacity: 1
+    opacity: 1
 }
 }
 @keyframes fadein {
 0% {
-	opacity: .1
+    opacity: .1
 }
 100%, 90% {
-	opacity: 1
+    opacity: 1
 }
 }
 
@@ -993,6 +992,7 @@ div.scrollIcon .scroll-text {
 }
 
 .image-container {
+    text-align: right !important;
     height: 100%;
     overflow: hidden;
     padding: 0;
@@ -2850,7 +2850,7 @@ nav.slide-effect a {
     -ms-transition: height 0.6s ease-in-out 0s, color 0.6s ease-in-out 0s, background-color 0.6s ease-in-out 0s;
     -o-transition: height 0.6s ease-in-out 0s, color 0.6s ease-in-out 0s, background-color 0.6s ease-in-out 0s;
     transition: height 0.6s ease-in-out 0s, color 0.6s ease-in-out 0s, background-color 0.6s ease-in-out 0s;    
-    width: 70px;
+    width: 40px;
     -webkit-border-radius: 3px 3px 0px 0px;
     -moz-border-radius: 3px 3px 0px 0px;
     border-radius: 3px 3px 0px 0px;
@@ -2940,28 +2940,28 @@ nav.slide-effect a {
     color: #fff;
 }
 
-.skills-1 {
-    border-top: 4px #F4709F solid;
+.skills-1, .btn-skills:nth-child(1) {
+    border-top: 4px #8c4e48 solid;
 }
 
-.skills-2 {
-    border-top: 4px #00CC66 solid;
+.skills-2, .btn-skills:nth-child(2) {
+    border-top: 4px #255567 solid;
 }
 
-.skills-3 {
-    border-top: 4px #A5DA26 solid;
+.skills-3, .btn-skills:nth-child(3) {
+    border-top: 4px #928028 solid;
 }
 
-.btn-skills.skills-2::before {
+.btn-skills.skills-1::before, .btn-skills:nth-child(1)::before {
     background-color: #E74C3C !important;
 }
 
-.btn-skills.skills-1::before {
-    background-color: #2C3E50;
+.btn-skills.skills-2::before, .btn-skills:nth-child(2)::before {
+    background-color: #3B839B !important;
 }
 
-.btn-skills.skills-3::before {
-    background-color: #a5da26;
+.btn-skills.skills-3::before, .btn-skills:nth-child(3)::before {
+    background-color: #e0c43c !important;
 }
 
 #pie-container {
@@ -2986,9 +2986,9 @@ nav.slide-effect a {
 }
 
 .skill-caption {
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: bold !important;
     margin-bottom: 2em;
-    font-weight: 300;
     text-transform: uppercase;
     width: 100%;
     color: white;
@@ -3000,7 +3000,7 @@ nav.slide-effect a {
     transform: rotate(270deg);
     writing-mode: lr-tb;
 }
-
+/*
 .bar2 {
     left: 90px;
 }
@@ -3016,7 +3016,41 @@ nav.slide-effect a {
 .bar5 {
     left: 360px;
 }
-
+*/
+/*
+.bar2 {
+    left: 60px;
+}
+.bar3 {
+    left: 120px;
+}
+.bar4 {
+    left: 180px;
+}
+.bar5 {
+    left: 240px;
+}
+.bar6 {
+    left: 300px;
+}
+.bar7 {
+    left: 360px;
+}
+.bar8 {
+    left: 420px;
+}
+.bar9 {
+    left: 480px;
+}
+.bar10 {
+    left: 540px;
+}
+.bar11 {
+    left: 600px;
+}
+.bar12 {
+    left: 660px;
+}*/
 /*======================== 14. CONTACT SECTION ========================*/
 .form-group {
     position: relative;
@@ -3266,7 +3300,7 @@ quote sup, quote cite, .award-icon,.hlite,.service-item i, .portfolio-filter-lis
 
 .first-nav.white-nav .nav-inner .nav-menu ul li a:hover,.second-nav.white-nav .nav-inner .nav-menu ul li a:hover,ul.services .service-item:hover,.portfolio-items figcaption,ul.timeline li .data:hover,.btn.btn-fill:hover,.pagenav span.current,.post-quote,.btn-search, .nav>li>a:hover,.nav>li>a:active,.nav>li>a:focus
 .owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span,.category-list .posts-count,.widget-tags .tag-cloud > li > a:hover,.name-title h5,.second-nav.white-nav .nav-inner .nav-menu ul li.active a,
-	.white-nav .nav-menu ul.dropdown-menu li a:hover{
+    .white-nav .nav-menu ul.dropdown-menu li a:hover{
     background-color: #1CB5EC;
 }
 ul.timeline li .data:hover:after {

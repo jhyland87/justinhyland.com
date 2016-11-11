@@ -163,10 +163,6 @@ if($('.tp-banner').length){
     });
   }
 
-    if ($("#pie-container").length)
-        rotate('rotate1');
-
-
     $('body').on('touchstart.dropdown', '.dropdown-menu', function(e) {
         e.stopPropagation();
     });

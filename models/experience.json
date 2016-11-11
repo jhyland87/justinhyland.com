@@ -7,9 +7,11 @@
 			"state": "AZ"
 		},
 		"duration":{
-			"begin": "Oct 2014",
-			"end": "Feb 2015"
+			"begin": "2014-10-01",
+			"end": "2015-02-25"
 		},
+		"beginDate": "2014-10-01",
+		"endDate": "2015-02-25",
 		"description": "Member of a specialized unit within the InfoSec group specializing in the field of Application Security. Focused on innovating and impementing secure applications using the best practices which fits the PayPal business environment. Working with an abundance of the latest technologies, as well as with many projects that are highly sensitive in nature requiring a high level of trust, values and integrity.",
 		"accomplishments":[
 			"Perform security assessments for web user interfaces, mobile applications, databases, point-of-sale systems, and back-end services.",
@@ -42,9 +44,11 @@
 			"state": "AZ"
 		},
 		"duration":{
-			"begin": "May 2011",
-			"end": "June 2014"
+			"begin": "2011-05-02",
+			"end": "2014-06-21"
 		},
+		"beginDate": "2011-05-02",
+		"endDate": "2014-06-21",
 		"description": "Responsible for developing, configuring, installing and maintaining technology in a multi-platform mission critical environment. Daily system maintenance tasks and participated in an on-call rotation. Largely focused on automating Linux related tasks, such as new server provisioning and decommissioning, RHDS/LDAP account management, SOX and PCI/DSS audits, custom Nagios checks, S.A.M. Server Population, etc. As well as published documentation to aid in common daily tasks, train new hires and interview potential candidates for other Linux roles.",
 		"accomplishments":[
 			"Developed an application used to inventory LifeLock's servers, storing and maintaining details such as hostname, IP, OS, Kernel, Date Provisioned, applications, Moniotring level, etc.",
@@ -70,9 +74,11 @@
 			"state": "AZ"
 		},
 		"duration":{
-			"begin": "Sept 2010",
-			"end": "May 2011"
+			"begin": "2010-09-10",
+			"end": "2011-05-06"
 		},
+		"beginDate": "2010-09-10",
+		"endDate": "2011-05-06",
 		"description": "Initially employed into the 24/7 NOC, working with a small team of System Analysts in charge of monitoring JAWA’s infrastructure and maintaining a 99.9% network uptime. Worked on special tasks such as handling escalated tickets, automating daily tasks, automating the NOCs desktop provisioning (Ubuntu), etc. Quickly promoted to the Linux Admin role within a matter of months. Started working more with Nagios, assisting in the automated provisioning of new servers, managing Jenkins, creating tools to help the NOC and other administrators in day to day tasks. Was also part of an on-call rotation as an escalation point for issues within the NOC.",
 		"accomplishments":[
 			"Created scripts to complete tasks that were presently done manually, such as parsing logs, updating tickets, etc.",
@@ -95,9 +101,11 @@
 			"state": "AZ"
 		},
 		"duration":{
-			"begin": "April 2009",
-			"end": "Sept 2010"
+			"begin": "2009-04-10",
+			"end": "2010-09-06"
 		},
+		"beginDate": "2009-04-10",
+		"endDate": "2010-09-06",
 		"description": "Provided technical support for customers via phone, chat and tickets, on shared Windows environments, as well as dedicated Linux and Windows servers. Linux related support on dedicated servers including tasks such as basic setup and management of a LAMP environment, troubleshooting and diagnosing compromised servers, troubleshooting issues within the customers code (Usually PHP) and anything else requested within the dedicated support package.",
 		"accomplishments":[
 			"Managed a large environment of shared, semi-dedicated and dedicated hosting servers (Around ~2k physical servers & ~1.5k virtual.)",
@@ -121,9 +129,11 @@
 			"state": "AZ"
 		},
 		"duration":{
-			"begin": "Aug 2008",
-			"end": "Dec 2010"
+			"begin": "2008-08-15",
+			"end": "2010-12-03"
 		},
+		"beginDate": "2008-08-15",
+		"endDate": "2010-12-03",
 		"description": "Purchased a dedicated server, occupied by as little as 10 clients and websites, and then migrated the websites to a different data center on a different and more powerful server. Eventually outgrew the environment, and found it necessary to spread the load onto multiple servers in different data centers for geographical reasons. Upon managing the servers and supporting the customers (roughly 200 customers), the following skills were acquired: cPanel/WHM, Bind, Named, Perl scripting, PHP scripting, MySQL management, advanced Apache/cPanel server optimization, troubleshooting errors for customers, deploying new applications on production servers with minimal downtime, full server backups, new account automation and creation, cPanel/WHM API/API2, and much more.",
 		"accomplishments":[
 			"Leased and managed multiple dedicated servers from multiple data centers such as Softlayer, The Planet, and FDCservers.",

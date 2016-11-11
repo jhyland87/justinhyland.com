@@ -163,10 +163,6 @@ if($('.tp-banner').length){
     });
   }
 
-    if ($("#pie-container").length)
-        rotate('rotate1');
-
-
     $('body').on('touchstart.dropdown', '.dropdown-menu', function(e) {
         e.stopPropagation();
     });
@@ -397,7 +393,7 @@ function parallaxInit() {
                 qstrings: {
                     id: flickr_id
                 },
-                itemTemplate: '<li><a href="" rel="prettyPhoto[flickr]"><img src="" alt="My Static Site &amp; Blog" /><span><i class="fa fa-search"></i></span></a></li>',
+                itemTemplate: '<li><a href="" rel="prettyPhoto[flickr]"><img src="" alt="Test Page" /><span><i class="fa fa-search"></i></span></a></li>',
                 itemCallback: function() {
                     $("a[rel='prettyPhoto[flickr]']").prettyPhoto({
                         animation_speed: "normal",

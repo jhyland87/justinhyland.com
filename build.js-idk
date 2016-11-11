@@ -1,0 +1,181 @@
+const Metalsmith  = require('metalsmith')
+const collections = require('metalsmith-collections')
+const markdown    = require('metalsmith-markdown')
+const layouts     = require('metalsmith-layouts')
+const permalinks  = require('metalsmith-permalinks')
+const tidy        = require('metalsmith-html-tidy')
+const debug       = require('metalsmith-debug')
+const models      = require('metalsmith-models')
+const within      = require('metalsmith-handlebars-within')
+const assets      = require('metalsmith-assets')
+const templates   = require('metalsmith-templates')
+const inplace     = require('metalsmith-in-place')
+const handlebars  = require('handlebars')
+const date        = require('metalsmith-build-date')
+const _           = require('lodash')
+const more        = require('metalsmith-more')
+const gravatar    = require('metalsmith-gravatar')
+const writemetadata = require('metalsmith-writemetadata')
+const copy        = require('metalsmith-copy')
+const jsonFiles   = require('metalsmith-json')
+const jsonToFiles = require('metalsmith-json-to-files')
+const tojson      = require('metalsmith-to-json')
+const metadata    = require('metalsmith-metadata')
+const metafiles   = require('metalsmith-metafiles')
+ 
+handlebars.registerHelper('iftt', function (item, comparison, options) {
+    if (item == comparison) {
+        return options.fn(this)
+    } else {
+        return options.inverse(this)
+    }
+})
+
+handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context)
+})
+
+const metalsmith = Metalsmith(__dirname)
+
+metalsmith
+  .use(debug())
+  .metadata({
+    title: "Test Page",
+    description: "Just testing metalsmith"
+  })
+  .use(markdown())
+  .use(models({ 
+    directory: './models' 
+  }))
+  
+  
+  .use( tojson({
+        outputPath : 'api',
+        createIndexes : true,
+        indexPaths : ['models/']
+    }))
+  
+  /*
+  .use(metafiles({
+     parsers: {
+      ".json": true, // Disable using JSON metadata files
+      ".yaml": false, // Enable using YAML metadata files
+      ".y": false, // Treat *.meta.y files as YAML metadata
+      ".js": false
+      /*".js": function(content, options) { // Custom parser
+        // Print the path to the file
+        console.log("Parsing file: " + options.path + "!");
+
+        // Execute the file and return the result
+        return eval(content.toString());
+      }*
+  }, path: 'models/skillsets.json'}))
+  */
+  //.metadata(require('./meta'))
+  /*.use(metadata({
+    models: 'models/skillsets.json'
+  }))*/
+  //.use(writemetadata())
+  .source('./src')
+  .destination('./public')
+  /*
+  .use(collections({
+     models: {
+      path: 'models/*.json'
+     }
+  }))
+  */
+  /*
+  .use(writemetadata({
+    pattern: ['models/*.json'],
+    collections: {
+
+      models: {
+        output: {
+          path: './json/models.json',
+           asObject: true
+        },
+        ignorekeys: ['contents', 'next', 'previous']
+      }
+    }
+  }))
+  */
+  /*.use(collections({
+    experience: {
+      sortBy: 'date',
+      reverse: true,
+      pattern: 'experience/*.json'
+      //metadata: 'path/to/file.json'
+    }
+  }))*/
+  .clean(true)
+  //.use(writemetadata())
+  .use(date())
+  .use(gravatar({
+    justinhyland: "j@linux.com"
+  }))
+  .use(templates('handlebars'))
+  .use(assets({
+    source: './assets', // relative to the working directory
+    destination: './assets' // relative to the build directory
+  }))
+  .use(markdown())
+  //.use(permalinks())
+  .use(within())
+  .use(layouts({ 
+    engine: 'handlebars',
+    partials: {
+      nav: 'partials/nav',
+      content_footer: 'partials/content_footer',
+      content_header: 'partials/content_header',
+      html_foot: 'partials/html_foot',
+      html_head: 'partials/html_head'
+    }
+  }))
+  /*
+  .use(copy({
+    pattern: '../models/*.json',
+    transform: function (file) {
+      return file + '.bak';
+    }
+  }))
+  */
+  .use(jsonToFiles({
+    source_path: '/models/'
+  }))
+  .use(inplace({
+    engine: 'handlebars'
+  }))
+  .use(more({
+   
+  }))
+  /*.use(tidy({
+    tidyOptions: {
+      'indent-spaces': 4
+      ,'clean': true
+      ,'output-html': true
+      //,'hide-comments': true
+      ,'show-errors': 6
+      //,'show-info': true
+      //,'show-warnings': true
+      ,'uppercase-attributes': false
+      ,'uppercase-tags': false
+      ,'drop-empty-elements': false
+      ,'drop-empty-paras': false
+      ,'fix-backslash': false
+      ,'fix-bad-comments': false
+      ,'fix-uri': false
+      ,'join-styles': false
+      ,'lower-literals': false
+      ,'merge-divs': false
+      ,'merge-emphasis': false
+      ,'merge-spans': false
+      ,'skip-nested': false
+    },
+  }))*/
+  .build(function(err, files) {
+    if (err) throw err
+
+      console.log('Metadata:',metalsmith)
+
+  })
