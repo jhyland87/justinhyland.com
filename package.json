@@ -22,7 +22,7 @@
     "metalsmith-models": "0.0.3",
     "metalsmith-more": "^0.2.0",
     "metalsmith-permalinks": "^0.5.0",
-    "metalsmith-s3": "0.0.2",
+    "metalsmith-s3": "github:mwishek/metalsmith-s3",
     "metalsmith-static": "0.0.5",
     "metalsmith-templates": "^0.7.0"
   }

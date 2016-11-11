@@ -136,16 +136,6 @@ metalsmith
         }
     }))
     */
-    /**
-    Access Key ID: AKIAIIUGXRENWW4TQGGQ
-    Secret Access Key: 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
-
-    export AWS_ACCESS_KEY_ID='AKIAIIUGXRENWW4TQGGQ'
-    export AWS_SECRET_ACCESS_KEY='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'
-
-    User: arn:aws:iam::871731382815:user/web
-    Bucket: justinhyland.com.s3-website-us-west-1.amazonaws.com
-    */
     .use(s3({
         action: 'write',
         bucket: 'justinhyland.com'
