@@ -27,7 +27,12 @@ const gist          = require('metalsmith-gist')
 const include       = require('metalsmith-include')
 const s3            = require('metalsmith-s3')
 const _             = require('lodash')
- 
+const partial       = require('metalsmith-partial')
+const discoverPartials = require('metalsmith-discover-partials')
+
+const partials = require('metalsmith-jstransformer-partials')
+const jstransformer = require('metalsmith-jstransformer')
+
 handlebars.registerHelper('iftt', function (item, comparison, options) {
     if (item == comparison) {
         return options.fn(this)
@@ -82,13 +87,22 @@ metalsmith
     .destination( './public' )
     .clean( true )
     .use(include())
-    /*.use( static({
+    .use( static({
         src: "models/skillsets.json",
         dest: "json/skillsets.json",
-    }))*/
+    }))
     .use( date() )
     .use( gravatar({
         justinhyland: "j@linux.com"
+    }))
+    .use(discoverPartials({
+        directory: 'layouts',
+        pattern: /\.html$/
+        //directory: 'src',
+        //pattern: /\.md$/
+    }))
+    .use( inplace({
+        engine: 'handlebars'
     }))
     .use( templates( 'handlebars' ) )
     .use( assets({
@@ -97,20 +111,19 @@ metalsmith
     }))
     .use( markdown() )
     .use( within() )
-    .use( layouts({ 
-        engine: 'handlebars',
-        partials: {
-            nav: 'partials/nav',
-            content_footer: 'partials/content_footer',
-            content_header: 'partials/content_header',
-            html_foot: 'partials/html_foot',
-            html_head: 'partials/html_head'
-        }
-    }))
-    .use( inplace({
+    .use(partial({
+        directory: './partials', 
         engine: 'handlebars'
     }))
-    /*
+    .use(discoverPartials({
+        directory: 'layouts/partials',
+        pattern: /\.html$/
+    }))
+    .use(jstransformer())
+    .use(partials())
+    .use( layouts({ 
+        engine: 'handlebars'
+    }))
     .use( tidy({
         tidyOptions: {
             'indent-spaces': 4
@@ -135,12 +148,15 @@ metalsmith
             ,'skip-nested': false
         }
     }))
-    */
     .use(s3({
         action: 'write',
         bucket: 'justinhyland.com'
     }))
     .build(function(err, files) {
+        console.log('metalsmith:',metalsmith)
+        console.log('metalsmith.metadata():',metalsmith.metadata())
+
+        console.log('partials:',Object.keys(handlebars.partials))
         if (err) throw err
 
         console.log('Completed')
