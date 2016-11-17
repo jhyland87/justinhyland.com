@@ -1,37 +1,49 @@
-const Metalsmith    = require('metalsmith')
-const collections   = require('metalsmith-collections')
-const markdown      = require('metalsmith-markdown')
-const layouts       = require('metalsmith-layouts')
-const permalinks    = require('metalsmith-permalinks')
-const tidy          = require('metalsmith-html-tidy')
-const debug         = require('metalsmith-debug')
-const models        = require('metalsmith-models')
-const within        = require('metalsmith-handlebars-within')
-const assets        = require('metalsmith-assets')
-const templates     = require('metalsmith-templates')
-const inplace       = require('metalsmith-in-place')
-const handlebars    = require('handlebars')
-const date          = require('metalsmith-build-date')
-const more          = require('metalsmith-more')
-const gravatar      = require('metalsmith-gravatar')
-const writemetadata = require('metalsmith-writemetadata')
-const copy          = require('metalsmith-copy')
-const jsonFiles     = require('metalsmith-json')
-const jsonToFiles   = require('metalsmith-json-to-files')
-const tojson        = require('metalsmith-to-json')
-const metadata      = require('metalsmith-metadata')
-const metafiles     = require('metalsmith-metafiles')
-const static        = require('metalsmith-static')
-const dateFormatter = require('metalsmith-date-formatter')
-const gist          = require('metalsmith-gist')
-const include       = require('metalsmith-include')
-const s3            = require('metalsmith-s3')
-const _             = require('lodash')
-const partial       = require('metalsmith-partial')
-const discoverPartials = require('metalsmith-discover-partials')
 
-const partials = require('metalsmith-jstransformer-partials')
-const jstransformer = require('metalsmith-jstransformer')
+const _                 = require('lodash')
+const handlebars        = require('handlebars')
+
+const Metalsmith        = require('metalsmith')
+const collections       = require('metalsmith-collections')
+const markdown          = require('metalsmith-markdown')
+const layouts           = require('metalsmith-layouts')
+const permalinks        = require('metalsmith-permalinks')
+//const tidy              = require('metalsmith-html-tidy')
+const debug             = require('metalsmith-debug')
+const models            = require('metalsmith-models')
+const within            = require('metalsmith-handlebars-within')
+const assets            = require('metalsmith-assets')
+const templates         = require('metalsmith-templates')
+const inplace           = require('metalsmith-in-place')
+const date              = require('metalsmith-build-date')
+const more              = require('metalsmith-more')
+const gravatar          = require('metalsmith-gravatar')
+const writemetadata     = require('metalsmith-writemetadata')
+const copy              = require('metalsmith-copy')
+const jsonFiles         = require('metalsmith-json')
+const jsonToFiles       = require('metalsmith-json-to-files')
+const tojson            = require('metalsmith-to-json')
+const metadata          = require('metalsmith-metadata')
+const metafiles         = require('metalsmith-metafiles')
+const static            = require('metalsmith-static')
+const dateFormatter     = require('metalsmith-date-formatter')
+const gist              = require('metalsmith-gist')
+const include           = require('metalsmith-include')
+const s3                = require('metalsmith-s3')
+const googleAnalytics   = require('metalsmith-google-analytics')
+const partial           = require('metalsmith-partial')
+const discoverPartials  = require('metalsmith-discover-partials')
+const sass              = require('metalsmith-sass')
+const partials          = require('metalsmith-jstransformer-partials')
+const jstransformer     = require('metalsmith-jstransformer')
+const summary           = require('metalsmith-summary')
+const download          = require('metalsmith-download')
+const archive           = require('metalsmith-archive')
+const prompt            = require('metalsmith-prompt')
+
+/*
+export AWS_ACCESS_KEY_ID='AKIAIIUGXRENWW4TQGGQ'
+export AWS_SECRET_ACCESS_KEY='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'
+*/
 
 handlebars.registerHelper('iftt', function (item, comparison, options) {
     if (item == comparison) {
@@ -48,6 +60,7 @@ handlebars.registerHelper('json', function(context) {
 const metalsmith = Metalsmith(__dirname)
 
 metalsmith
+    .use(summary.init())
     .use(debug())
     .metadata({
         title: "Test Page",
@@ -83,14 +96,23 @@ metalsmith
             }
         ]
     }))
-    .source( './src' )
-    .destination( './public' )
-    .clean( true )
-    .use(include())
     .use( static({
         src: "models/skillsets.json",
         dest: "json/skillsets.json",
     }))
+    .source( './src' )
+    .destination( './public' )
+    .clean( true )
+    /*.use(prompt({
+        deploy: 'boolean'
+    }))*/
+    //.use(googleAnalytics('API-KEY'))
+    .use(archive())
+    /*.use(download({
+        url: 'http://www.justinhyland.com/me.jpg',
+        file: 'me-avatar.jpg'
+    }))*/
+    .use(include())
     .use( date() )
     .use( gravatar({
         justinhyland: "j@linux.com"
@@ -109,6 +131,10 @@ metalsmith
         source: './assets', 
         destination: './assets' 
     }))
+    .use(sass({
+        outputStyle: 'expanded',
+        outputDir: 'assets/css/'
+    }))
     .use( markdown() )
     .use( within() )
     .use(partial({
@@ -124,7 +150,7 @@ metalsmith
     .use( layouts({ 
         engine: 'handlebars'
     }))
-    .use( tidy({
+    /*.use( tidy({
         tidyOptions: {
             'indent-spaces': 4
             ,'clean': true
@@ -145,19 +171,19 @@ metalsmith
             ,'merge-divs': false
             ,'merge-emphasis': false
             ,'merge-spans': false
-            ,'skip-nested': false
         }
-    }))
-    .use(s3({
+    }))*/
+    /*.use(s3({
         action: 'write',
         bucket: 'justinhyland.com'
-    }))
+    }))*/
+    .use(summary.print())
     .build(function(err, files) {
         console.log('metalsmith:',metalsmith)
-        console.log('metalsmith.metadata():',metalsmith.metadata())
-
         console.log('partials:',Object.keys(handlebars.partials))
+
         if (err) throw err
+
 
         console.log('Completed')
     })

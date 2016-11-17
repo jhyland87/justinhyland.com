@@ -3346,3 +3346,10 @@ ul.environment li:after {
 ul.environment li:last-child:after {
     content: "";
 }
+a#github-fork > img {
+    z-index: 99999;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    border: 0;
+}
