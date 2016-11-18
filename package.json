@@ -1,5 +1,5 @@
 {
-  "name": "static-site-example",
+  "name": "justinhyland-resume",
   "private": true,
   "dependencies": {
     "handlebars": "^4.0.5",
@@ -37,7 +37,6 @@
     "metalsmith-prompt": "0.0.8",
     "metalsmith-s3": "github:mwishek/metalsmith-s3",
     "metalsmith-sass": "^1.3.0",
-    "metalsmith-static": "0.0.5",
     "metalsmith-summary": "^1.0.0",
     "metalsmith-templates": "^0.7.0",
     "metalsmith-to-json": "0.0.7",

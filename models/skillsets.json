@@ -9,35 +9,59 @@
         "items":[
             {
                 "title":"RHEL & CentOS 4 - 7",
-                "value":"85%"
+                "value":"85%",
+                "categories": [ 
+                    "linux", "engineering", "infrastructure"
+                ]
             },
             {
                 "title":"Oracle Linux",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "engineering", "infrastructure"
+                ]
             },
             {
                 "title":"Debian (Ubuntu)",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "engineering" 
+                ]
             },
             {
                 "title":"Fedora",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "engineering" 
+                ]
             },
             {
                 "title":"Windows 2008",
-                "value":"60%"
+                "value":"60%",
+                "categories": [ 
+                    "windows", "infrastructure"
+                ]
             },
             {
                 "title":"Windows 2003",
-                "value":"65%"
+                "value":"65%",
+                "categories": [ 
+                    "windows", "infrastructure"
+                ]
             },
             {
                 "title":"Amazon Web Services",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "engineering", "development", "infrastructure"
+                ]
             },
             {
                 "title":"VMWare ESX(i)",
-                "value":"60%"
+                "value":"60%",
+                "categories": [ 
+                    "engineering", "virtualization", "infrastructure"
+                ]
             }
         ]
     },
@@ -51,51 +75,87 @@
         "items":[
             {
                 "title":"Bash/Shell",
-                "value":"85%"
+                "value":"85%",
+                "categories": [ 
+                    "linux", "automation"
+                ]
             },
             {
                 "title":"Perl",
-                "value":"80%"
+                "value":"80%",
+                "categories": [ 
+                    "linux", "windows", "development"
+                ]
             },
             {
                 "title":"PHP",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "engineering", "development"
+                ]
             },
             {
                 "title":"Python",
-                "value":"59%"
+                "value":"59%",
+                "categories": [ 
+                    "engineering", "devops", "automation"
+                ]
             },
             {
                 "title":"Ruby",
-                "value":"45%"
+                "value":"45%",
+                "categories": [ 
+                    "engineering", "devops"
+                ]
             },
             {
                 "title":"TCL",
-                "value":"55%"
+                "value":"55%",
+                "categories": [ 
+                    "networking", "automation"
+                ]
             },
             {
                 "title":"SOAP",
-                "value":"60%"
+                "value":"60%",
+                "categories": [ 
+                    "engineering", "infrastructure", "automation"
+                ]
             },
             {
                 "title":"REST API",
-                "value":"85%"
+                "value":"85%",
+                "categories": [ 
+                    "development", "devops", "automation"
+                ]
             },
             {
                 "title":"XML RPC",
-                "value":"90%"
+                "value":"90%",
+                "categories": [ 
+                    "development", "automation", "automation"
+                ]
             },
             {
                 "title":"Powershell",
-                "value":"50%"
+                "value":"50%",
+                "categories": [ 
+                    "windows", "automation", "automation"
+                ]
             },
             {
                 "title":"SQL",
-                "value":"65%"
+                "value":"65%",
+                "categories": [ 
+                    "database", "linux", "development"
+                ]
             },
             {
                 "title":"Javascript & NodeJS",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "development"
+                ]
             }
         ]
     },
@@ -109,55 +169,94 @@
         "items":[
             {
                 "title":"Jenkins",
-                "value":"90%"
+                "value":"90%",
+                "categories": [ 
+                    "linux", "engineering", "development", "automation", "devops"
+                ]
             },
             {
                 "title":"VMWare",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "engineering", "automation", "devops", "virtualization", "infrastructure"
+                ]
             },
             {
                 "title":"Chef",
-                "value":"55%"
+                "value":"55%",
+                "categories": [ 
+                    "linux", "engineering", "automation", "devops", "infrastructure"
+                ]
             },
             {
                 "title":"MySQL",
-                "value":"75%"
+                "value":"75%",
+                "categories": [ 
+                    "linux", "engineering", "development", "database", "devops"
+                ]
             },
             {
                 "title":"Nagios",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "automation", "monitoring"
+                ]
             },
             {
                 "title":"RHDS",
-                "value":"50%"
+                "value":"50%",
+                "categories": [ 
+                    "linux", "engineering", "infrastructure"
+                ]
             },
             {
                 "title":"Apache",
-                "value":"90%"
+                "value":"90%",
+                "categories": [ 
+                    "linux", "engineering", "development"
+                ]
             },
             {
                 "title":"Tomcat",
-                "value":"60%"
+                "value":"60%",
+                "categories": [ 
+                    "linux", "engineering", "development"
+                ]
             },
             {
                 "title":"Nginx",
-                "value":"65%"
+                "value":"65%",
+                "categories": [ 
+                    "linux", "engineering", "development"
+                ]
             },
             {
                 "title":"Satellite",
-                "value":"50%"
+                "value":"50%",
+                "categories": [ 
+                    "linux", "engineering", "development", "automation", "infrastructure"
+                ]
             },
             {
                 "title":"Metasploit",
-                "value":"45%"
+                "value":"45%",
+                "categories": [ 
+                    "linux", "infosec"
+                ]
             },
             {
                 "title":"Atlassian",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "documentation"
+                ]
             },
             {
                 "title":"HAProxy",
-                "value":"70%"
+                "value":"70%",
+                "categories": [ 
+                    "linux", "engineering", "infrastructure"
+                ]
             }
         ]
     }

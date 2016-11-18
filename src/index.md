@@ -7,6 +7,7 @@ model:
 ---
 
 {{> about }}
+{{> stats }}
 {{> timeline }}
 {{> experience }}
 {{> contact }}
