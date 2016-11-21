@@ -54,16 +54,16 @@ handlebars.registerHelper('json', function(context) {
 const metalsmith = Metalsmith(__dirname)
 
 metalsmith
-    .use(summary.init())
-    .use(debug())
-    .metadata({
+    .use( summary.init() )
+    .use( debug() )
+    /*.metadata({
         title: "Test Page",
         description: "Just testing metalsmith"
-    })
-    .use(models({ 
+    })*/
+    .use( models({ 
         directory: './models' 
     }))
-    .use(metafiles('models', {
+    .use( metafiles('models', {
         postfix: '.custom',
         parsers: {
             ".json": true
@@ -74,7 +74,7 @@ metalsmith
         caching: true,
         cacheDir: '.gists'
     }))*/
-    .use(dateFormatter({
+    /*.use(dateFormatter({
         dates: [
             {
                 key: 'beginDate',
@@ -89,7 +89,7 @@ metalsmith
                 format: 'MM YYYY'                
             }
         ]
-    }))
+    }))*/
     .use( assets({
         source: './models',
         destination: './json'
@@ -101,17 +101,17 @@ metalsmith
         deploy: 'boolean'
     }))*/
     //.use(googleAnalytics('API-KEY'))
-    //.use(archive())
-    /*.use(download({
+    .use( archive())
+    .use( download({
         url: 'http://www.justinhyland.com/me.jpg',
         file: 'me-avatar.jpg'
-    }))*/
-    .use(include())
+    }))
+    .use( include())
     .use( date() )
     .use( gravatar({
         justinhyland: "j@linux.com"
     }))
-    .use(discoverPartials({
+    .use( discoverPartials({
         directory: 'layouts',
         pattern: /\.html$/
         //directory: 'src',
@@ -131,20 +131,20 @@ metalsmith
     }))
     .use( markdown() )
     .use( within() )
-    .use(partial({
+    .use( partial({
         directory: './partials', 
         engine: 'handlebars'
     }))
-    .use(discoverPartials({
+    .use( discoverPartials({
         directory: 'layouts/partials',
         pattern: /\.html$/
     }))
-    .use(jstransformer())
-    .use(partials())
+    .use( jstransformer())
+    .use( partials())
     .use( layouts({ 
         engine: 'handlebars'
     }))
-    /*.use( tidy({
+    .use( tidy({
         tidyOptions: {
             'indent-spaces': 4
             ,'clean': true
@@ -155,7 +155,7 @@ metalsmith
             //,'show-warnings': true
             ,'uppercase-attributes': false
             ,'uppercase-tags': false
-            ,'drop-empty-elements': false
+            //,'drop-empty-elements': false
             ,'drop-empty-paras': true
             ,'fix-backslash': false
             ,'fix-bad-comments': false
@@ -166,15 +166,15 @@ metalsmith
             ,'merge-emphasis': false
             ,'merge-spans': false
         }
-    }))*/
-    .use(s3({
+    }))/*
+    .use( s3({
         action: 'write',
         bucket: 'justinhyland.com'
-    }))
-    .use(summary.print())
-    .build(function(err, files) {
-        console.log('metalsmith:',metalsmith)
-        console.log('partials:',Object.keys(handlebars.partials))
+    }))*/
+    .use( summary.print())
+    .build( function(err, files) {
+        //console.log('metalsmith:',metalsmith)
+        //console.log('partials:',Object.keys(handlebars.partials))
 
         if (err) throw err
 

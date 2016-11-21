@@ -41,5 +41,9 @@
     "metalsmith-templates": "^0.7.0",
     "metalsmith-to-json": "0.0.7",
     "metalsmith-writemetadata": "^0.4.5"
+  },
+  "scripts":{
+    "build": "node build.js",
+    "build-debug": "DEBUG=metalsmith-s3,metalsmith-static node build.js"
   }
 }
